@@ -83,7 +83,7 @@ quantum-algorithms/
 │   └── bb84-without-eavesdropping/
 ├── deutsch-algorithm/
 ├── deutsch-jozsa-algorithm/
-├── error-correction/
+├── quantum-error-correction/
 │   ├── bit-flip-code/
 │   └── phase-flip-code/
 ├── grover-algorithm/
