@@ -74,11 +74,25 @@ python bb84/bb84-with-eavesdropping/main.py
 ```
 
 ### IBM Quantum Composer
-Each algorithm folder includes a `.qasm` file that can be uploaded directly to [IBM Quantum Composer](https://quantum.ibm.com/composer):
-- `deutsch-algorithm/deutsch.qasm`
-- `grover-algorithm/grover-2qubit.qasm`
-- `quantum-teleportation/teleportation.qasm`
-- etc.
+Each algorithm folder includes `.qasm` files that can be uploaded directly to [IBM Quantum Composer](https://quantum.ibm.com/composer):
+
+| Algorithm | QASM File |
+|-----------|-----------|
+| Deutsch | `deutsch-algorithm/deutsch.qasm` |
+| Deutsch-Jozsa | `deutsch-jozsa-algorithm/deutsch-jozsa.qasm` |
+| Bernstein-Vazirani | `bernstein-vazirani-algorithm/bernstein-vazirani.qasm` |
+| Simon | `simon-algorithm/simon.qasm` |
+| Grover (2-qubit) | `grover-algorithm/grover-2qubit.qasm` |
+| Grover (3-qubit) | `grover-algorithm/grover-3qubit.qasm` |
+| QFT (3-qubit) | `quantum-fourier-transform/qft-3qubit.qasm` |
+| QFT (4-qubit) | `quantum-fourier-transform/qft-4qubit.qasm` |
+| QFT (5-qubit) | `quantum-fourier-transform/qft-5qubit.qasm` |
+| Shor (Period Finding) | `shor-algorithm/shor-period-finding.qasm` |
+| Teleportation | `quantum-teleportation/teleportation.qasm` |
+| Superdense Coding | `superdense-coding/superdense-coding.qasm` |
+| BB84 | `bb84/bb84.qasm` |
+| Bit-Flip Code | `quantum-error-correction/bit-flip-code/bit-flip-code.qasm` |
+| Phase-Flip Code | `quantum-error-correction/phase-flip-code/phase-flip-code.qasm` |
 
 ## Project Structure
 
