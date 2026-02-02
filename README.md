@@ -65,13 +65,20 @@ Get your API token from: https://quantum.ibm.com/
 
 ## Usage
 
-Run any algorithm:
+### Run with Python (IBM Quantum Hardware)
 ```bash
 python deutsch-algorithm/main.py
 python grover-algorithm/main.py
 python bb84/bb84-with-eavesdropping/main.py
 # etc.
 ```
+
+### IBM Quantum Composer
+Each algorithm folder includes a `.qasm` file that can be uploaded directly to [IBM Quantum Composer](https://quantum.ibm.com/composer):
+- `deutsch-algorithm/deutsch.qasm`
+- `grover-algorithm/grover-2qubit.qasm`
+- `quantum-teleportation/teleportation.qasm`
+- etc.
 
 ## Project Structure
 
