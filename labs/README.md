@@ -3,171 +3,78 @@
 Hands-on lab suite for WSQ course **TGS-2024043419**, implemented with Qiskit and run on
 the IBM Quantum Platform.
 
-The **18 in-class activities** map to the eight course topics — see the table in the
-[repository README](../README.md). Algorithms not used in class are kept in
-[`bonus/`](bonus/) for self-study; nothing has been removed.
+The **18 in-class activities** are numbered `lab01`–`lab18`, matching the activity numbers in
+the slide deck, Lesson Plan and Learner Guide. Each folder holds its Python implementation,
+any OpenQASM circuits, and a README.
+
+Algorithms not used in class are kept in [`bonus/`](bonus/) for self-study — nothing has been
+removed.
 
 Full step-by-step instructions for every activity are in the **Learner Guide**.
 
-## Algorithms Implemented
+## The 18 activities
 
-### Fundamental Algorithms
-- **Deutsch Algorithm** - Determines if a function is constant or balanced with 1 query
-- **Deutsch-Jozsa Algorithm** - Generalized Deutsch algorithm for n-bit functions
-- **Bernstein-Vazirani Algorithm** - Finds hidden string s in f(x) = s·x (mod 2)
-- **Simon's Algorithm** - Exponential speedup for finding hidden period
-
-### Search & Optimization
-- **Grover's Algorithm** - Quadratic speedup for unstructured search O(√N)
-- **QAOA** - Quantum Approximate Optimization Algorithm for combinatorial optimization
-- **Quantum Walk** - Discrete-time quantum walk with quadratic speedup for graph search
-
-### Quantum Transforms & Estimation
-- **Quantum Fourier Transform (QFT)** - Basis for many quantum algorithms
-- **Quantum Phase Estimation (QPE)** - Estimates eigenvalues of unitary operators
-- **Quantum Counting** - Combines Grover and QPE to count solutions
-- **Amplitude Estimation** - Quadratic speedup over classical Monte Carlo
-
-### Factoring & Linear Systems
-- **Shor's Algorithm** - Integer factorization (simplified demonstration)
-- **HHL Algorithm** - Solves linear systems Ax=b with exponential speedup
-
-### Variational Algorithms (NISQ)
-- **VQE** - Variational Quantum Eigensolver for finding ground state energies
-- **QAOA** - Variational algorithm for combinatorial optimization
-
-### Quantum Communication
-- **Quantum Teleportation** - Transfer quantum state using entanglement
-- **Superdense Coding** - Send 2 classical bits using 1 qubit
-- **BB84 Protocol** - Quantum key distribution
-  - Standard BB84 (without eavesdropping)
-  - BB84 with eavesdropping detection
-- **E91 Protocol** - Entanglement-based QKD with Bell inequality security
-
-### State Comparison
-- **SWAP Test** - Compares quantum states to measure overlap |⟨ψ|φ⟩|²
-
-### Error Correction
-- **Bit-Flip Code** - 3-qubit code protecting against X errors
-- **Phase-Flip Code** - 3-qubit code protecting against Z errors
-- **Shor's 9-Qubit Code** - First QEC code, protects against arbitrary single-qubit errors
-- **Steane's 7-Qubit Code** - CSS code based on Hamming code, more efficient than Shor
+| Lab | Activity | Topic | Files |
+|---|---|---|---|
+| [`lab01`](lab01/) | Linear Algebra for Quantum Mechanics in Python | 1 | `main.py` |
+| [`lab02`](lab02/) | Visualising a Qubit on the Bloch Sphere | 2 | `main.py` |
+| [`lab03`](lab03/) | Superposition and Entanglement on IBM Quantum | 2 | `main.py` |
+| [`lab04`](lab04/) | Building Circuits in IBM Quantum Composer | 3 | `bell-state.qasm`, `main.py` |
+| [`lab05`](lab05/) | Quantum Gates and Bell/GHZ States with PennyLane | 3 | `main.py` |
+| [`lab06`](lab06/) | Quantum Teleportation | 4 | `main.py`, `teleportation-alt.qasm`, `teleportation.qasm` |
+| [`lab07`](lab07/) | Superdense Coding Protocol | 4 | `main.py`, `superdense-coding.qasm` |
+| [`lab08`](lab08/) | BB84 Quantum Key Distribution with Eavesdropping Detection | 4 | `bb84.qasm`, `main-with-eavesdropping.py`, `main.py` |
+| [`lab09`](lab09/) | Deutsch and Deutsch-Jozsa Algorithms | 5 | `deutsch-jozsa.qasm`, `deutsch.qasm`, `main-deutsch-jozsa.py`, `main.py` |
+| [`lab10`](lab10/) | Bernstein-Vazirani Algorithm | 5 | `bernstein-vazirani.qasm`, `main.py` |
+| [`lab11`](lab11/) | Grover's Search Algorithm | 5 | `grover-2qubit.qasm`, `grover-3qubit.qasm`, `main.py` |
+| [`lab12`](lab12/) | Quantum Fourier Transform | 5 | `main.py`, `qft-3qubit.qasm`, `qft-4qubit.qasm`, `qft-5qubit.qasm` |
+| [`lab13`](lab13/) | Shor's Algorithm and the Quantum Threat to RSA | 6 | `main.py`, `shor-period-finding.qasm` |
+| [`lab14`](lab14/) | Post-Quantum Cryptography Migration Assessment | 6 | `main.py` |
+| [`lab15`](lab15/) | Molecular Simulation with VQE (Healthcare & Science) | 7 | `main.py`, `vqe-h2.qasm` |
+| [`lab16`](lab16/) | Portfolio Optimisation with QAOA (Finance) | 7 | `main.py`, `qaoa-maxcut.qasm` |
+| [`lab17`](lab17/) | Bit-Flip and Phase-Flip Error Correction Codes | 8 | `bit-flip-code.qasm`, `main-phase-flip.py`, `main.py`, `phase-flip-code.qasm` |
+| [`lab18`](lab18/) | Shor 9-Qubit and Steane 7-Qubit Codes | 8 | `main-steane.py`, `main.py`, `shor-9qubit-code.qasm`, `steane-7qubit-code.qasm` |
 
 ## Setup
 
-### Prerequisites
-- Python 3.13+
-- IBM Quantum account ([sign up here](https://quantum.ibm.com/))
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/alfredang/quantum-algorithms.git
-cd quantum-algorithms
+pip install qiskit qiskit-ibm-runtime pennylane matplotlib pylatexenc python-dotenv numpy
 ```
 
-2. Install dependencies:
-```bash
-pip install -e .
-# or using uv:
-uv sync
-```
+Create `labs/.env` with your free [IBM Quantum](https://quantum.ibm.com) credentials:
 
-3. Create a `.env` file with your IBM Quantum credentials:
-```bash
-cp .env.example .env
-# Edit .env with your credentials
-```
-
-Your `.env` file should contain:
 ```
 IBM_QUANTUM_TOKEN=your_api_token_here
 IBM_QUANTUM_INSTANCE=your_instance_here
 ```
 
-Get your API token from: https://quantum.ibm.com/
+> `.env` is gitignored and is never uploaded — it holds a live API token.
 
-## Usage
+## Running a lab
 
-### Run with Python (IBM Quantum Hardware)
 ```bash
-python deutsch-algorithm/main.py
-python grover-algorithm/main.py
-python vqe/main.py
-python qaoa/main.py
-python e91-protocol/main.py
-# etc.
+python labs/lab01/main.py    # no IBM account needed
+python labs/lab02/main.py    # no IBM account needed
+python labs/lab03/main.py    # local simulator
+python labs/lab03/main.py --hardware   # real IBM Quantum device
 ```
 
-### IBM Quantum Composer
-Each algorithm folder includes `.qasm` files that can be uploaded directly to [IBM Quantum Composer](https://quantum.ibm.com/composer):
+Every lab prints a **Test it** block stating exactly what a correct run looks like.
 
-| Algorithm | QASM File |
-|-----------|-----------|
-| Deutsch | `deutsch-algorithm/deutsch.qasm` |
-| Deutsch-Jozsa | `deutsch-jozsa-algorithm/deutsch-jozsa.qasm` |
-| Bernstein-Vazirani | `bernstein-vazirani-algorithm/bernstein-vazirani.qasm` |
-| Simon | `bonus/simon-algorithm/simon.qasm` |
-| Grover (2-qubit) | `grover-algorithm/grover-2qubit.qasm` |
-| Grover (3-qubit) | `grover-algorithm/grover-3qubit.qasm` |
-| QFT (3-qubit) | `quantum-fourier-transform/qft-3qubit.qasm` |
-| QFT (4-qubit) | `quantum-fourier-transform/qft-4qubit.qasm` |
-| QFT (5-qubit) | `quantum-fourier-transform/qft-5qubit.qasm` |
-| QPE (3-qubit) | `bonus/quantum-phase-estimation/qpe-3qubit.qasm` |
-| Quantum Counting | `bonus/quantum-counting/quantum-counting.qasm` |
-| Amplitude Estimation | `bonus/amplitude-estimation/amplitude-estimation.qasm` |
-| Shor (Period Finding) | `shor-algorithm/shor-period-finding.qasm` |
-| HHL | `bonus/hhl-algorithm/hhl-simple.qasm` |
-| VQE (H₂) | `vqe/vqe-h2.qasm` |
-| QAOA (Max-Cut) | `qaoa/qaoa-maxcut.qasm` |
-| Quantum Walk | `bonus/quantum-walk/quantum-walk.qasm` |
-| SWAP Test | `bonus/swap-test/swap-test.qasm` |
-| Teleportation | `quantum-teleportation/teleportation.qasm` |
-| Superdense Coding | `superdense-coding/superdense-coding.qasm` |
-| BB84 | `bb84/bb84.qasm` |
-| E91 | `bonus/e91-protocol/e91.qasm` |
-| Bit-Flip Code | `quantum-error-correction/bit-flip-code/bit-flip-code.qasm` |
-| Phase-Flip Code | `quantum-error-correction/phase-flip-code/phase-flip-code.qasm` |
-| Shor's 9-Qubit Code | `quantum-error-correction/shor-9qubit-code/shor-9qubit-code.qasm` |
-| Steane's 7-Qubit Code | `quantum-error-correction/steane-7qubit-code/steane-7qubit-code.qasm` |
+`.qasm` files load directly into [IBM Quantum Composer](https://quantum.ibm.com/composer).
 
-## Project Structure
+## Interactive practice
 
-```
-quantum-algorithms/
-├── bonus/amplitude-estimation/
-├── bernstein-vazirani-algorithm/
-├── bb84/
-│   ├── bb84-with-eavesdropping/
-│   └── bb84-without-eavesdropping/
-├── deutsch-algorithm/
-├── deutsch-jozsa-algorithm/
-├── bonus/e91-protocol/
-├── grover-algorithm/
-├── bonus/hhl-algorithm/
-├── qaoa/
-├── bonus/quantum-counting/
-├── quantum-error-correction/
-│   ├── bit-flip-code/
-│   ├── phase-flip-code/
-│   ├── shor-9qubit-code/
-│   └── steane-7qubit-code/
-├── quantum-fourier-transform/
-├── bonus/quantum-phase-estimation/
-├── quantum-teleportation/
-├── bonus/quantum-walk/
-├── shor-algorithm/
-├── bonus/simon-algorithm/
-├── superdense-coding/
-├── bonus/swap-test/
-├── vqe/
-├── .env.example
-├── .gitignore
-├── pyproject.toml
-└── README.md
-```
+[**QuantumLab Beginner**](https://alfredang.github.io/quantumlabs/) — 18 browser-based modules
+covering the postulates, Bloch sphere, entanglement, CHSH, a circuit builder, phase kickback,
+BB84 with an Eve toggle and a 3-qubit QEC Monte-Carlo. No install required.
 
-## License
+## Bonus material
 
-MIT
+[`bonus/`](bonus/) holds algorithms not used in the 18 in-class activities:
+amplitude estimation, E91, HHL, quantum counting, quantum phase estimation, quantum walk,
+Simon's algorithm, the SWAP test, and a combined QEC runner.
+
+---
+
+© 2026 Tertiary Infotech Academy Pte Ltd. All rights reserved.

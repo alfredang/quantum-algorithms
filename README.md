@@ -3,7 +3,7 @@
 **WSQ Course Code:** TGS-2024043419
 **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 **Duration:** 4 days · 8 training hours per day (32 hours)
-**Current version:** v12.0 (11 August 2026)
+**Current version:** v13.0 (11 August 2026)
 
 Courseware and hands-on lab suite for the WSQ course
 [Securing the Future with Quantum Computing and Cryptography](https://www.tertiarycourses.com.sg/wsq-securing-the-future-with-quantum-computing-and-cryptography.html).
@@ -17,7 +17,7 @@ Learner Guide and labs can never drift apart.
 
 | Artifact | File |
 |---|---|
-| Trainer slide deck | `courseware/WSQ - Master Trainer Slides - Securing the Future with Quantum Computing and Cryptography - v12.0.pptx` (+ `.pdf`) |
+| Trainer slide deck | `courseware/WSQ - Master Trainer Slides - Securing the Future with Quantum Computing and Cryptography - v13.0.pptx` (+ `.pdf`) |
 | Lesson Plan | `courseware/LP-Securing the Future with Quantum Computing and Cryptography.docx` (+ `.pdf`) |
 | Learner Guide | `courseware/LG-Securing the Future with Quantum Computing and Cryptography.docx` (+ `.pdf`) |
 | Learner Guide (Markdown mirror) | `LG-Securing the Future with Quantum Computing and Cryptography.md` |
@@ -29,7 +29,7 @@ Learner Guide and labs can never drift apart.
 
 ### Mathematical depth
 
-The deck (262 slides) and Learner Guide (89 pages) carry the full theory, not an overview:
+The deck (262 slides) and Learner Guide (90 pages) carry the full theory, not an overview:
 
 - **Prerequisites** — linear algebra and Dirac notation, inner/outer/tensor products,
   eigenvalues; unitary operators and their four properties; density matrices and the
@@ -99,32 +99,33 @@ learning outcomes, topics, schedule) and `data_domain1.py` … `data_domain8.py`
 
 ## Hands-on activities
 
-The 18 in-class activities live in [`labs/`](labs/):
+The 18 in-class activities live in [`labs/`](labs/), numbered `lab01`–`lab18` to match the
+activity numbers used in the slides, Lesson Plan and Learner Guide:
 
 | # | Activity | Folder |
 |---|---|---|
-| 1 | Linear Algebra for Quantum Mechanics in Python | `labs/linear-algebra/` |
-| 2 | Visualising a Qubit on the Bloch Sphere | `labs/bloch-sphere/` |
-| 3 | Superposition and Entanglement on IBM Quantum | `labs/bell-state/` |
-| 4 | Building Circuits in IBM Quantum Composer | `labs/quantum-composer/` |
-| 5 | Quantum Gates and Bell/GHZ States with PennyLane | `labs/pennylane-gates/` |
-| 6 | Quantum Teleportation | `labs/quantum-teleportation/` |
-| 7 | Superdense Coding Protocol | `labs/superdense-coding/` |
-| 8 | BB84 Quantum Key Distribution | `labs/bb84/` |
-| 9 | Deutsch and Deutsch-Jozsa Algorithms | `labs/deutsch-algorithm/`, `labs/deutsch-jozsa-algorithm/` |
-| 10 | Bernstein-Vazirani Algorithm | `labs/bernstein-vazirani-algorithm/` |
-| 11 | Grover's Search Algorithm | `labs/grover-algorithm/` |
-| 12 | Quantum Fourier Transform | `labs/quantum-fourier-transform/` |
-| 13 | Shor's Algorithm and the Quantum Threat to RSA | `labs/shor-algorithm/` |
-| 14 | Post-Quantum Cryptography Migration Assessment | `labs/pqc-migration/` |
-| 15 | Molecular Simulation with VQE | `labs/vqe/` |
-| 16 | Portfolio Optimisation with QAOA | `labs/qaoa/` |
-| 17 | Bit-Flip and Phase-Flip Error Correction | `labs/quantum-error-correction/` |
-| 18 | Shor 9-Qubit and Steane 7-Qubit Codes | `labs/quantum-error-correction/` |
+| 1 | Linear Algebra for Quantum Mechanics in Python | [`labs/lab01/`](labs/lab01/) |
+| 2 | Visualising a Qubit on the Bloch Sphere | [`labs/lab02/`](labs/lab02/) |
+| 3 | Superposition and Entanglement on IBM Quantum | [`labs/lab03/`](labs/lab03/) |
+| 4 | Building Circuits in IBM Quantum Composer | [`labs/lab04/`](labs/lab04/) |
+| 5 | Quantum Gates and Bell/GHZ States with PennyLane | [`labs/lab05/`](labs/lab05/) |
+| 6 | Quantum Teleportation | [`labs/lab06/`](labs/lab06/) |
+| 7 | Superdense Coding Protocol | [`labs/lab07/`](labs/lab07/) |
+| 8 | BB84 Quantum Key Distribution with Eavesdropping Detection | [`labs/lab08/`](labs/lab08/) |
+| 9 | Deutsch and Deutsch-Jozsa Algorithms | [`labs/lab09/`](labs/lab09/) |
+| 10 | Bernstein-Vazirani Algorithm | [`labs/lab10/`](labs/lab10/) |
+| 11 | Grover's Search Algorithm | [`labs/lab11/`](labs/lab11/) |
+| 12 | Quantum Fourier Transform | [`labs/lab12/`](labs/lab12/) |
+| 13 | Shor's Algorithm and the Quantum Threat to RSA | [`labs/lab13/`](labs/lab13/) |
+| 14 | Post-Quantum Cryptography Migration Assessment | [`labs/lab14/`](labs/lab14/) |
+| 15 | Molecular Simulation with VQE (Healthcare & Science) | [`labs/lab15/`](labs/lab15/) |
+| 16 | Portfolio Optimisation with QAOA (Finance) | [`labs/lab16/`](labs/lab16/) |
+| 17 | Bit-Flip and Phase-Flip Error Correction Codes | [`labs/lab17/`](labs/lab17/) |
+| 18 | Shor 9-Qubit and Steane 7-Qubit Codes | [`labs/lab18/`](labs/lab18/) |
 
 Additional algorithms not used in class are kept in [`labs/bonus/`](labs/bonus/):
 amplitude estimation, E91, HHL, quantum counting, quantum phase estimation, quantum walk,
-Simon's algorithm and the SWAP test.
+Simon's algorithm, the SWAP test, and a combined QEC runner.
 
 ### Running the labs
 
@@ -142,10 +143,10 @@ IBM_QUANTUM_INSTANCE=your_instance_here
 Then run any activity:
 
 ```bash
-python labs/linear-algebra/main.py         # no account needed
-python labs/bloch-sphere/main.py           # no account needed
-python labs/bell-state/main.py             # local simulator
-python labs/bell-state/main.py --hardware  # real IBM Quantum device
+python labs/lab01/main.py             # no IBM account needed
+python labs/lab02/main.py             # no IBM account needed
+python labs/lab03/main.py             # local simulator
+python labs/lab03/main.py --hardware  # real IBM Quantum device
 ```
 
 Every lab prints a **Test it** block stating exactly what a correct run looks like.

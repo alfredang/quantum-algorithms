@@ -1,6 +1,6 @@
 # Securing the Future with Quantum Computing and Cryptography — Learner Guide
 
-**WSQ Course Code:** TGS-2024043419  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v12.0 · 11 August 2026**
+**WSQ Course Code:** TGS-2024043419  |  **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)  |  **Version v13.0 · 11 August 2026**
 
 ## Contents
 
@@ -596,7 +596,7 @@ A Python notebook that verifies unitarity and Hermiticity, computes eigenvalues/
 
 H-dagger H equals the identity, X and Z return real eigenvalues +1 and -1, the Born-rule probability of measuring 0 in |+> is 0.5, and the tensor product produces a 4-component two-qubit state.
 
-> **Note:** The reference implementation for this activity is in labs/linear-algebra/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab01/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -693,7 +693,7 @@ A set of Bloch-sphere plots showing |0>, |1>, |+>, |-> and an arbitrary Ry-rotat
 
 |0> sits at the north pole, X moves it to the south pole, H places it on the equator at +x, and the S gate rotates it around the equator while leaving the Z-basis probabilities at 50/50.
 
-> **Note:** The reference implementation for this activity is in labs/bloch-sphere/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab02/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -781,7 +781,7 @@ A Bell state circuit executed on real IBM Quantum hardware, with a measured hist
 
 The superposition circuit gives roughly 50% |0> and 50% |1>; the Bell circuit gives roughly 50% |00> and 50% |11> with only a small percentage of |01> and |10> counts caused by hardware noise.
 
-> **Note:** The reference implementation for this activity is in labs/bell-state/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab03/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -927,7 +927,7 @@ A set of Composer circuits (X, H, CNOT, Bell state) with their statevector outpu
 
 The Composer probability panel shows a 50/50 split between |00> and |11> for the Bell circuit, and the exported OpenQASM contains an h instruction followed by a cx instruction.
 
-> **Note:** The reference implementation for this activity is in labs/quantum-composer/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab04/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -1018,7 +1018,7 @@ A PennyLane script that draws each circuit, returns the state vector, and confir
 
 The Bell state returns amplitudes of about 0.707 on |00> and |11> and zero elsewhere; the GHZ state returns amplitudes only on |000> and |111>; the phase-kickback circuit shows the eigenvalue phase transferred to the control qubit.
 
-> **Note:** The reference implementation for this activity is in labs/pennylane-gates/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab05/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -1527,10 +1527,10 @@ A teleportation circuit run on IBM Quantum hardware that reconstructs an arbitra
 
 **Step-by-step**
 
-1. Open the quantum-teleportation lab folder and review main.py before running it.
+1. Open the lab06 folder and review main.py before running it.
 
    ```python
-   cd labs/quantum-teleportation && cat main.py
+   cd labs/lab06 && cat main.py
    ```
 
 2. Create a 3-qubit circuit: q0 carries the state to teleport, q1 and q2 form the entangled pair.
@@ -1575,7 +1575,7 @@ A teleportation circuit run on IBM Quantum hardware that reconstructs an arbitra
 8. Measure q2 and run the circuit on the least busy IBM Quantum backend.
 
    ```python
-   python labs/quantum-teleportation/main.py
+   python labs/lab06/main.py
    ```
 
 9. Compare the measured distribution on q2 against the original state prepared on q0.
@@ -1585,7 +1585,7 @@ A teleportation circuit run on IBM Quantum hardware that reconstructs an arbitra
 
 The measurement statistics on Bob's qubit q2 match the amplitudes of the state originally prepared on q0, within hardware noise, and the original state no longer exists on q0.
 
-> **Note:** The reference implementation for this activity is in labs/quantum-teleportation/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab06/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -1605,10 +1605,10 @@ A superdense coding circuit that correctly transmits all four two-bit messages 0
 
 **Step-by-step**
 
-1. Open the superdense-coding lab folder and review the encoding table in main.py.
+1. Open the lab07 folder and review the encoding table in main.py.
 
    ```python
-   cd labs/superdense-coding && cat main.py
+   cd labs/lab07 && cat main.py
    ```
 
 2. Create a 2-qubit circuit and build the shared Bell pair with a Hadamard and CNOT.
@@ -1647,7 +1647,7 @@ A superdense coding circuit that correctly transmits all four two-bit messages 0
 8. Run all four encodings on IBM Quantum hardware and record the measured bit strings.
 
    ```python
-   python labs/superdense-coding/main.py
+   python labs/lab07/main.py
    ```
 
 9. Confirm each encoding decodes to its intended two-bit message with high probability.
@@ -1656,7 +1656,7 @@ A superdense coding circuit that correctly transmits all four two-bit messages 0
 
 Each of the four encodings decodes to its intended message — identity gives 00, X gives 01, Z gives 10 and ZX gives 11 — demonstrating two classical bits carried by one transmitted qubit.
 
-> **Note:** The reference implementation for this activity is in labs/superdense-coding/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab07/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -1676,16 +1676,16 @@ A working BB84 implementation producing a shared secret key, plus a comparison r
 
 **Step-by-step**
 
-1. Open the bb84 lab folder — it contains a run without eavesdropping and a run with eavesdropping.
+1. Open the lab08 folder — it holds main.py (no eavesdropper) and main-with-eavesdropping.py.
 
    ```python
-   cd labs/bb84 && ls
+   ls labs/lab08
    ```
 
 2. Review how Alice generates a random bit string and a random basis string for each qubit.
 
    ```python
-   cat bb84-without-eavesdropping/main.py
+   cat labs/lab08/main.py
    ```
 
 3. Understand the encoding rule: in the Z basis send |0> or |1>; in the X basis send |+> or |->.
@@ -1693,14 +1693,14 @@ A working BB84 implementation producing a shared secret key, plus a comparison r
 5. Run the protocol without an eavesdropper and observe the sifted key after basis reconciliation.
 
    ```python
-   python bb84-without-eavesdropping/main.py
+   python labs/lab08/main.py
    ```
 
 6. Confirm that where Alice and Bob used the same basis, their bits agree almost perfectly.
 7. Now run the version with Eve performing an intercept-resend attack on the channel.
 
    ```python
-   python bb84-with-eavesdropping/main.py
+   python labs/lab08/main-with-eavesdropping.py
    ```
 
 8. Compare the error rate in the sifted key between the two runs.
@@ -1711,7 +1711,7 @@ A working BB84 implementation producing a shared secret key, plus a comparison r
 
 Without an eavesdropper the sifted key error rate is near zero (bounded only by hardware noise); with the intercept-resend eavesdropper the error rate rises to roughly 25%, which is the signal to abort and discard the key.
 
-> **Note:** The reference implementation for this activity is in labs/bb84/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab08/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -2280,10 +2280,10 @@ Deutsch and Deutsch-Jozsa circuits with all four oracle types, run on IBM Quantu
 
 **Step-by-step**
 
-1. Open the deutsch-algorithm lab and review the four oracle constructions in main.py.
+1. Open the lab09 folder and review the four oracle constructions in main.py.
 
    ```python
-   cd labs/deutsch-algorithm && cat main.py
+   cd labs/lab09 && cat main.py
    ```
 
 2. Understand the oracle convention |x>|y> maps to |x>|y XOR f(x)>, which keeps the operation reversible.
@@ -2309,14 +2309,14 @@ Deutsch and Deutsch-Jozsa circuits with all four oracle types, run on IBM Quantu
 6. Run the circuit against all four oracles and confirm each is classified correctly in one query.
 
    ```python
-   python labs/deutsch-algorithm/main.py
+   python labs/lab09/main.py
    ```
 
 7. Explain how phase kickback makes the oracle mark the input register rather than the output register.
-8. Move to the deutsch-jozsa lab and review how the oracle generalises to n input qubits.
+8. Open main-deutsch-jozsa.py in lab09 and review how the oracle generalises to n input qubits.
 
    ```python
-   cd ../deutsch-jozsa-algorithm && cat main.py
+   cat labs/lab09/main-deutsch-jozsa.py
    ```
 
 9. Run the Deutsch-Jozsa algorithm and confirm that an all-zeros measurement means constant and any other result means balanced.
@@ -2331,7 +2331,7 @@ Deutsch and Deutsch-Jozsa circuits with all four oracle types, run on IBM Quantu
 
 The Deutsch circuit measures 0 for both constant oracles and 1 for both balanced oracles; Deutsch-Jozsa returns the all-zeros string for a constant function and a non-zero string for a balanced function — each using exactly one oracle query.
 
-> **Note:** The reference implementation for this activity is in labs/deutsch-algorithm/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab09/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -2351,10 +2351,10 @@ A Bernstein-Vazirani circuit that recovers a chosen hidden string such as 1011 i
 
 **Step-by-step**
 
-1. Open the bernstein-vazirani-algorithm lab and choose a hidden string, for example s = 1011.
+1. Open the lab10 folder and choose a hidden string, for example s = 1011.
 
    ```python
-   cd labs/bernstein-vazirani-algorithm && cat main.py
+   cd labs/lab10 && cat main.py
    ```
 
 2. Create a circuit with n input qubits plus one ancilla, and set the ancilla to |1>.
@@ -2386,7 +2386,7 @@ A Bernstein-Vazirani circuit that recovers a chosen hidden string such as 1011 i
 6. Measure the input register and run the circuit on IBM Quantum hardware.
 
    ```python
-   python labs/bernstein-vazirani-algorithm/main.py
+   python labs/lab10/main.py
    ```
 
 7. Confirm the most frequent measurement outcome is exactly the hidden string s.
@@ -2397,7 +2397,7 @@ A Bernstein-Vazirani circuit that recovers a chosen hidden string such as 1011 i
 
 The most frequent measured bit string equals the hidden string s that was encoded in the oracle, recovered with a single oracle query regardless of the length of s.
 
-> **Note:** The reference implementation for this activity is in labs/bernstein-vazirani-algorithm/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab10/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -2417,10 +2417,10 @@ Grover circuits for 2 and 3 qubits that amplify the marked state to a high measu
 
 **Step-by-step**
 
-1. Open the grover-algorithm lab, which contains both the 2-qubit and 3-qubit versions.
+1. Open the lab11 folder, which contains both the 2-qubit and 3-qubit versions.
 
    ```python
-   cd labs/grover-algorithm && cat main.py
+   cd labs/lab11 && cat main.py
    ```
 
 2. Initialise the register in an equal superposition of all N = 2^n basis states with Hadamards.
@@ -2445,7 +2445,7 @@ Grover circuits for 2 and 3 qubits that amplify the marked state to a high measu
 5. Measure the register and run the 2-qubit search — one Grover iteration is optimal here.
 
    ```python
-   python labs/grover-algorithm/main.py
+   python labs/lab11/main.py
    ```
 
 6. Confirm the marked state is measured with close to 100% probability after a single iteration.
@@ -2458,7 +2458,7 @@ Grover circuits for 2 and 3 qubits that amplify the marked state to a high measu
 
 For 2 qubits the marked state is measured with near-certainty after one Grover iteration; for 3 qubits it dominates the histogram after two iterations; applying too many iterations visibly reduces the success probability.
 
-> **Note:** The reference implementation for this activity is in labs/grover-algorithm/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab11/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -2478,10 +2478,10 @@ QFT circuits for 3, 4 and 5 qubits, validated against a classical DFT reference 
 
 **Step-by-step**
 
-1. Open the quantum-fourier-transform lab, which provides 3, 4 and 5 qubit versions.
+1. Open the lab12 folder, which provides 3, 4 and 5 qubit versions.
 
    ```python
-   cd labs/quantum-fourier-transform && cat main.py
+   cd labs/lab12 && cat main.py
    ```
 
 2. Apply a Hadamard to the most significant qubit to begin the QFT construction.
@@ -2526,7 +2526,7 @@ QFT circuits for 3, 4 and 5 qubits, validated against a classical DFT reference 
 8. Run the 3-qubit QFT on IBM Quantum hardware and inspect the transpiled circuit depth.
 
    ```python
-   python labs/quantum-fourier-transform/main.py
+   python labs/lab12/main.py
    ```
 
 9. Count the gates and confirm the QFT uses O(n^2) gates versus O(N log N) for the classical FFT.
@@ -2535,7 +2535,7 @@ QFT circuits for 3, 4 and 5 qubits, validated against a classical DFT reference 
 
 Your hand-built QFT circuit produces the same state vector as Qiskit's built-in QFT and matches a normalised classical FFT of the same input, using on the order of n^2 gates.
 
-> **Note:** The reference implementation for this activity is in labs/quantum-fourier-transform/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab12/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -2867,10 +2867,10 @@ A period-finding circuit whose measured output yields the period r, from which t
 
 **Step-by-step**
 
-1. Open the shor-algorithm lab and review the period-finding construction in main.py.
+1. Open the lab13 folder and review the period-finding construction in main.py.
 
    ```python
-   cd labs/shor-algorithm && cat main.py
+   cd labs/lab13 && cat main.py
    ```
 
 2. Understand the classical reduction: to factor N, pick a random a coprime to N and find the period r of a^x mod N.
@@ -2896,7 +2896,7 @@ A period-finding circuit whose measured output yields the period r, from which t
 7. Measure the counting register and run the circuit on IBM Quantum hardware.
 
    ```python
-   python labs/shor-algorithm/main.py
+   python labs/lab13/main.py
    ```
 
 8. Use the continued-fractions method on the measured phase to recover the period r.
@@ -2913,7 +2913,7 @@ A period-finding circuit whose measured output yields the period r, from which t
 
 The measured phase yields period r = 4 for a = 7 and N = 15, and the classical post-processing step recovers the correct factors 3 and 5.
 
-> **Note:** The reference implementation for this activity is in labs/shor-algorithm/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab13/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -2953,7 +2953,7 @@ A completed cryptographic inventory and a prioritised PQC migration plan for a s
 
 Your inventory correctly separates Shor-broken asymmetric algorithms from Grover-weakened symmetric ones, maps each to the correct NIST FIPS standard, and ranks migration priority by how long the data must remain confidential.
 
-> **Note:** The reference implementation for this activity is in labs/pqc-migration/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab14/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -3105,10 +3105,10 @@ A VQE run that converges to the H2 ground-state energy, with an energy-versus-it
 
 **Step-by-step**
 
-1. Open the vqe lab folder and review the ansatz and Hamiltonian definitions in main.py.
+1. Open the lab15 folder and review the ansatz and Hamiltonian definitions in main.py.
 
    ```python
-   cd labs/vqe && cat main.py
+   cd labs/lab15 && cat main.py
    ```
 
 2. Understand the hybrid loop: a parameterised quantum circuit prepares a trial state, a classical optimiser updates the parameters.
@@ -3118,7 +3118,7 @@ A VQE run that converges to the H2 ground-state energy, with an energy-versus-it
 6. Run the classical optimiser to minimise the energy over the parameters.
 
    ```python
-   python labs/vqe/main.py
+   python labs/lab15/main.py
    ```
 
 7. Plot energy against iteration and confirm the value converges downward toward the ground state.
@@ -3130,7 +3130,7 @@ A VQE run that converges to the H2 ground-state energy, with an energy-versus-it
 
 The VQE optimisation converges to an energy close to the exact H2 ground-state value of about -1.137 Hartree, and the convergence plot shows the energy decreasing monotonically toward that limit.
 
-> **Note:** The reference implementation for this activity is in labs/vqe/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab15/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -3150,10 +3150,10 @@ A QAOA run that finds the optimal cut on a small graph, with the solution qualit
 
 **Step-by-step**
 
-1. Open the qaoa lab folder and review the Max-Cut problem definition in main.py.
+1. Open the lab16 folder and review the Max-Cut problem definition in main.py.
 
    ```python
-   cd labs/qaoa && cat main.py
+   cd labs/lab16 && cat main.py
    ```
 
 2. Define a small graph whose vertices represent assets and whose edges carry correlation weights.
@@ -3163,7 +3163,7 @@ A QAOA run that finds the optimal cut on a small graph, with the solution qualit
 6. Run the classical optimiser over the gamma and beta parameters to maximise the expected cut value.
 
    ```python
-   python labs/qaoa/main.py
+   python labs/lab16/main.py
    ```
 
 7. Sample the optimised circuit and identify the most frequent bit string as the proposed solution.
@@ -3175,7 +3175,7 @@ A QAOA run that finds the optimal cut on a small graph, with the solution qualit
 
 The most frequently sampled bit string from the optimised QAOA circuit corresponds to the true maximum cut found by brute force, and the approximation ratio improves as the number of layers p increases.
 
-> **Note:** The reference implementation for this activity is in labs/qaoa/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab16/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -3351,10 +3351,10 @@ Working bit-flip and phase-flip code circuits that correctly identify and repair
 
 **Step-by-step**
 
-1. Open the quantum-error-correction lab and review the bit-flip code implementation.
+1. Open the lab17 folder and review the bit-flip code implementation in main.py.
 
    ```python
-   cd labs/quantum-error-correction/bit-flip-code && cat main.py
+   cd labs/lab17 && cat main.py
    ```
 
 2. Encode one logical qubit into three physical qubits using two CNOT gates.
@@ -3387,13 +3387,13 @@ Working bit-flip and phase-flip code circuits that correctly identify and repair
 8. Run the bit-flip code on IBM Quantum hardware and verify the correction succeeds.
 
    ```python
-   python labs/quantum-error-correction/bit-flip-code/main.py
+   python labs/lab17/main.py
    ```
 
-9. Move to the phase-flip code and note that conjugating with Hadamards turns Z errors into X errors.
+9. Run main-phase-flip.py and note that conjugating with Hadamards turns Z errors into X errors.
 
    ```python
-   cd ../phase-flip-code && python main.py
+   python labs/lab17/main-phase-flip.py
    ```
 
 10. Explain why measuring the syndrome rather than the data qubits is what makes quantum error correction possible at all.
@@ -3402,7 +3402,7 @@ Working bit-flip and phase-flip code circuits that correctly identify and repair
 
 The syndrome measurement correctly identifies which qubit carried the injected error without collapsing the logical state, and applying the indicated correction restores the original logical qubit.
 
-> **Note:** The reference implementation for this activity is in labs/quantum-error-correction/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab17/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
@@ -3422,10 +3422,10 @@ Working Shor 9-qubit and Steane 7-qubit code circuits, with a comparison of qubi
 
 **Step-by-step**
 
-1. Open the shor-9qubit-code folder and review how it concatenates the phase-flip and bit-flip codes.
+1. Open the lab18 folder and review how main.py concatenates the phase-flip and bit-flip codes.
 
    ```python
-   cd labs/quantum-error-correction/shor-9qubit-code && cat main.py
+   cd labs/lab18 && cat main.py
    ```
 
 2. Understand the structure: one logical qubit becomes three blocks of three, protecting against both X and Z errors.
@@ -3437,10 +3437,10 @@ Working Shor 9-qubit and Steane 7-qubit code circuits, with a comparison of qubi
    python main.py
    ```
 
-6. Move to the steane-7qubit-code folder and review the CSS construction based on the Hamming code.
+6. Open main-steane.py in lab18 and review the CSS construction based on the Hamming code.
 
    ```python
-   cd ../steane-7qubit-code && cat main.py
+   cat labs/lab18/main-steane.py
    ```
 
 7. Run the Steane code and confirm it also corrects an arbitrary single-qubit error using only seven qubits.
@@ -3457,7 +3457,7 @@ Working Shor 9-qubit and Steane 7-qubit code circuits, with a comparison of qubi
 
 Both the Shor 9-qubit and Steane 7-qubit circuits detect and correct an arbitrary injected single-qubit error (X, Y or Z), and you can state the qubit overhead each code requires.
 
-> **Note:** The reference implementation for this activity is in labs/quantum-error-correction/. Read the source before you run it — understanding the circuit matters more than the output.
+> **Note:** The reference implementation for this activity is in labs/lab18/. Read the source before you run it — understanding the circuit matters more than the output.
 
 ---
 
