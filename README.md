@@ -1,166 +1,145 @@
-# Quantum Algorithms
+# Securing the Future with Quantum Computing and Cryptography
 
-A collection of quantum computing algorithms implemented using Qiskit and executed on IBM Quantum hardware.
+**WSQ Course Code:** TGS-2024043419
+**Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
+**Duration:** 4 days · 8 training hours per day (32 hours)
+**Current version:** v11.0 (11 August 2026)
 
-## Algorithms Implemented
+Courseware and hands-on lab suite for the WSQ course
+[Securing the Future with Quantum Computing and Cryptography](https://www.tertiarycourses.com.sg/wsq-securing-the-future-with-quantum-computing-and-cryptography.html).
 
-### Fundamental Algorithms
-- **Deutsch Algorithm** - Determines if a function is constant or balanced with 1 query
-- **Deutsch-Jozsa Algorithm** - Generalized Deutsch algorithm for n-bit functions
-- **Bernstein-Vazirani Algorithm** - Finds hidden string s in f(x) = s·x (mod 2)
-- **Simon's Algorithm** - Exponential speedup for finding hidden period
+---
 
-### Search & Optimization
-- **Grover's Algorithm** - Quadratic speedup for unstructured search O(√N)
-- **QAOA** - Quantum Approximate Optimization Algorithm for combinatorial optimization
-- **Quantum Walk** - Discrete-time quantum walk with quadratic speedup for graph search
+## Courseware
 
-### Quantum Transforms & Estimation
-- **Quantum Fourier Transform (QFT)** - Basis for many quantum algorithms
-- **Quantum Phase Estimation (QPE)** - Estimates eigenvalues of unitary operators
-- **Quantum Counting** - Combines Grover and QPE to count solutions
-- **Amplitude Estimation** - Quadratic speedup over classical Monte Carlo
+All artifacts are generated from a **single source of truth** so the slides, Lesson Plan,
+Learner Guide and labs can never drift apart.
 
-### Factoring & Linear Systems
-- **Shor's Algorithm** - Integer factorization (simplified demonstration)
-- **HHL Algorithm** - Solves linear systems Ax=b with exponential speedup
+| Artifact | File |
+|---|---|
+| Trainer slide deck | `courseware/WSQ - Master Trainer Slides - Securing the Future with Quantum Computing and Cryptography - v11.0.pptx` (+ `.pdf`) |
+| Lesson Plan | `courseware/LP-Securing the Future with Quantum Computing and Cryptography.docx` (+ `.pdf`) |
+| Learner Guide | `courseware/LG-Securing the Future with Quantum Computing and Cryptography.docx` (+ `.pdf`) |
+| Learner Guide (Markdown mirror) | `LG-Securing the Future with Quantum Computing and Cryptography.md` |
+| Diagram assets | `courseware/assets/*.png` |
 
-### Variational Algorithms (NISQ)
-- **VQE** - Variational Quantum Eigensolver for finding ground state energies
-- **QAOA** - Variational algorithm for combinatorial optimization
+> The slide deck is deliberately **visual** and carries no step-by-step build
+> instructions. The full step-by-step for every activity lives in the **Learner Guide**.
 
-### Quantum Communication
-- **Quantum Teleportation** - Transfer quantum state using entanglement
-- **Superdense Coding** - Send 2 classical bits using 1 qubit
-- **BB84 Protocol** - Quantum key distribution
-  - Standard BB84 (without eavesdropping)
-  - BB84 with eavesdropping detection
-- **E91 Protocol** - Entanglement-based QKD with Bell inequality security
+Assessment papers and answer keys are **confidential** — they are distributed via Google
+Drive and the LMS only, and are excluded from this repository.
 
-### State Comparison
-- **SWAP Test** - Compares quantum states to measure overlap |⟨ψ|φ⟩|²
+### Rebuilding the courseware
 
-### Error Correction
-- **Bit-Flip Code** - 3-qubit code protecting against X errors
-- **Phase-Flip Code** - 3-qubit code protecting against Z errors
-- **Shor's 9-Qubit Code** - First QEC code, protects against arbitrary single-qubit errors
-- **Steane's 7-Qubit Code** - CSS code based on Hamming code, more efficient than Shor
-
-## Setup
-
-### Prerequisites
-- Python 3.13+
-- IBM Quantum account ([sign up here](https://quantum.ibm.com/))
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/alfredang/quantum-algorithms.git
-cd quantum-algorithms
+python3 .claude/skills/courseware-build/build/make_charts.py       # diagram assets
+bash    .claude/skills/courseware-build/build/build_courseware.sh  # PPT + LP + LG + PDFs
 ```
 
-2. Install dependencies:
+Content is edited in `.claude/skills/courseware-build/build/course_data.py` (metadata,
+learning outcomes, topics, schedule) and `data_domain1.py` … `data_domain8.py`
+(one file per topic, carrying that topic's hands-on activities).
+
+---
+
+## Learning outcomes
+
+| | Outcome |
+|---|---|
+| LO1 | Design mathematical models required for quantum computing applications. |
+| LO2 | Decide on appropriate physical methodologies specific to quantum computing problems. |
+| LO3 | Direct two-level quantum models for quantum computing. |
+| LO4 | Evaluate quantum computing applicability in the business context. |
+| LO5 | Spearhead the application of quantum gates to quantum computing domains. |
+| LO6 | Establish guidelines for selecting quantum computing algorithms. |
+| LO7 | Synthesize quantum computing methodologies to address complex problems. |
+
+## Course topics
+
+| Topic | Title | Activities |
+|---|---|---|
+| 1 | Quantum Physics Fundamentals | 1 |
+| 2 | Introduction to Quantum Computing Systems | 2–3 |
+| 3 | Quantum Gates and Circuits | 4–5 |
+| 4 | Quantum Protocols | 6–8 |
+| 5 | Quantum Algorithms | 9–12 |
+| 6 | Quantum Cryptography and Quantum Safety | 13–14 |
+| 7 | Quantum Computing Applications and Use Cases | 15–16 |
+| 8 | Quantum Error Correction | 17–18 |
+
+---
+
+## Hands-on activities
+
+The 18 in-class activities live in [`labs/`](labs/):
+
+| # | Activity | Folder |
+|---|---|---|
+| 1 | Linear Algebra for Quantum Mechanics in Python | `labs/linear-algebra/` |
+| 2 | Visualising a Qubit on the Bloch Sphere | `labs/bloch-sphere/` |
+| 3 | Superposition and Entanglement on IBM Quantum | `labs/bell-state/` |
+| 4 | Building Circuits in IBM Quantum Composer | `labs/quantum-composer/` |
+| 5 | Quantum Gates and Bell/GHZ States with PennyLane | `labs/pennylane-gates/` |
+| 6 | Quantum Teleportation | `labs/quantum-teleportation/` |
+| 7 | Superdense Coding Protocol | `labs/superdense-coding/` |
+| 8 | BB84 Quantum Key Distribution | `labs/bb84/` |
+| 9 | Deutsch and Deutsch-Jozsa Algorithms | `labs/deutsch-algorithm/`, `labs/deutsch-jozsa-algorithm/` |
+| 10 | Bernstein-Vazirani Algorithm | `labs/bernstein-vazirani-algorithm/` |
+| 11 | Grover's Search Algorithm | `labs/grover-algorithm/` |
+| 12 | Quantum Fourier Transform | `labs/quantum-fourier-transform/` |
+| 13 | Shor's Algorithm and the Quantum Threat to RSA | `labs/shor-algorithm/` |
+| 14 | Post-Quantum Cryptography Migration Assessment | `labs/pqc-migration/` |
+| 15 | Molecular Simulation with VQE | `labs/vqe/` |
+| 16 | Portfolio Optimisation with QAOA | `labs/qaoa/` |
+| 17 | Bit-Flip and Phase-Flip Error Correction | `labs/quantum-error-correction/` |
+| 18 | Shor 9-Qubit and Steane 7-Qubit Codes | `labs/quantum-error-correction/` |
+
+Additional algorithms not used in class are kept in [`labs/bonus/`](labs/bonus/):
+amplitude estimation, E91, HHL, quantum counting, quantum phase estimation, quantum walk,
+Simon's algorithm and the SWAP test.
+
+### Running the labs
+
 ```bash
-pip install -e .
-# or using uv:
-uv sync
+pip install qiskit qiskit-ibm-runtime pennylane matplotlib pylatexenc python-dotenv numpy
 ```
 
-3. Create a `.env` file with your IBM Quantum credentials:
-```bash
-cp .env.example .env
-# Edit .env with your credentials
-```
+Create `labs/.env` with your free [IBM Quantum](https://quantum.ibm.com) credentials:
 
-Your `.env` file should contain:
 ```
 IBM_QUANTUM_TOKEN=your_api_token_here
 IBM_QUANTUM_INSTANCE=your_instance_here
 ```
 
-Get your API token from: https://quantum.ibm.com/
+Then run any activity:
 
-## Usage
-
-### Run with Python (IBM Quantum Hardware)
 ```bash
-python deutsch-algorithm/main.py
-python grover-algorithm/main.py
-python vqe/main.py
-python qaoa/main.py
-python e91-protocol/main.py
-# etc.
+python labs/linear-algebra/main.py         # no account needed
+python labs/bloch-sphere/main.py           # no account needed
+python labs/bell-state/main.py             # local simulator
+python labs/bell-state/main.py --hardware  # real IBM Quantum device
 ```
 
-### IBM Quantum Composer
-Each algorithm folder includes `.qasm` files that can be uploaded directly to [IBM Quantum Composer](https://quantum.ibm.com/composer):
+Every lab prints a **Test it** block stating exactly what a correct run looks like.
 
-| Algorithm | QASM File |
-|-----------|-----------|
-| Deutsch | `deutsch-algorithm/deutsch.qasm` |
-| Deutsch-Jozsa | `deutsch-jozsa-algorithm/deutsch-jozsa.qasm` |
-| Bernstein-Vazirani | `bernstein-vazirani-algorithm/bernstein-vazirani.qasm` |
-| Simon | `simon-algorithm/simon.qasm` |
-| Grover (2-qubit) | `grover-algorithm/grover-2qubit.qasm` |
-| Grover (3-qubit) | `grover-algorithm/grover-3qubit.qasm` |
-| QFT (3-qubit) | `quantum-fourier-transform/qft-3qubit.qasm` |
-| QFT (4-qubit) | `quantum-fourier-transform/qft-4qubit.qasm` |
-| QFT (5-qubit) | `quantum-fourier-transform/qft-5qubit.qasm` |
-| QPE (3-qubit) | `quantum-phase-estimation/qpe-3qubit.qasm` |
-| Quantum Counting | `quantum-counting/quantum-counting.qasm` |
-| Amplitude Estimation | `amplitude-estimation/amplitude-estimation.qasm` |
-| Shor (Period Finding) | `shor-algorithm/shor-period-finding.qasm` |
-| HHL | `hhl-algorithm/hhl-simple.qasm` |
-| VQE (H₂) | `vqe/vqe-h2.qasm` |
-| QAOA (Max-Cut) | `qaoa/qaoa-maxcut.qasm` |
-| Quantum Walk | `quantum-walk/quantum-walk.qasm` |
-| SWAP Test | `swap-test/swap-test.qasm` |
-| Teleportation | `quantum-teleportation/teleportation.qasm` |
-| Superdense Coding | `superdense-coding/superdense-coding.qasm` |
-| BB84 | `bb84/bb84.qasm` |
-| E91 | `e91-protocol/e91.qasm` |
-| Bit-Flip Code | `quantum-error-correction/bit-flip-code/bit-flip-code.qasm` |
-| Phase-Flip Code | `quantum-error-correction/phase-flip-code/phase-flip-code.qasm` |
-| Shor's 9-Qubit Code | `quantum-error-correction/shor-9qubit-code/shor-9qubit-code.qasm` |
-| Steane's 7-Qubit Code | `quantum-error-correction/steane-7qubit-code/steane-7qubit-code.qasm` |
+`.qasm` files can be loaded directly into
+[IBM Quantum Composer](https://quantum.ibm.com/composer).
 
-## Project Structure
+---
 
-```
-quantum-algorithms/
-├── amplitude-estimation/
-├── bernstein-vazirani-algorithm/
-├── bb84/
-│   ├── bb84-with-eavesdropping/
-│   └── bb84-without-eavesdropping/
-├── deutsch-algorithm/
-├── deutsch-jozsa-algorithm/
-├── e91-protocol/
-├── grover-algorithm/
-├── hhl-algorithm/
-├── qaoa/
-├── quantum-counting/
-├── quantum-error-correction/
-│   ├── bit-flip-code/
-│   ├── phase-flip-code/
-│   ├── shor-9qubit-code/
-│   └── steane-7qubit-code/
-├── quantum-fourier-transform/
-├── quantum-phase-estimation/
-├── quantum-teleportation/
-├── quantum-walk/
-├── shor-algorithm/
-├── simon-algorithm/
-├── superdense-coding/
-├── swap-test/
-├── vqe/
-├── .env.example
-├── .gitignore
-├── pyproject.toml
-└── README.md
-```
+## Prerequisites
 
-## License
+- Computer operation proficiency and a minimum Polytechnic Diploma.
+- Basic programming skill, preferably Python.
+- Minimum 1 year of working experience.
+- Windows or Mac laptop; free Google Colab and IBM Quantum accounts.
 
-MIT
+## Assessment
+
+- **Written Assessment (WA)** — Short-Answer Questions, 1 hour, open book.
+- **Practical Performance (PP)** — hands-on quantum tasks, 1 hour, open book.
+- Minimum 75% attendance is required for assessment and funding eligibility.
+
+---
+
+© 2026 Tertiary Infotech Academy Pte Ltd. All rights reserved. · [tertiarycourses.com.sg](https://www.tertiarycourses.com.sg)
