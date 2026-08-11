@@ -3,7 +3,7 @@
 **WSQ Course Code:** TGS-2024043419
 **Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
 **Duration:** 4 days · 8 training hours per day (32 hours)
-**Current version:** v11.0 (11 August 2026)
+**Current version:** v12.0 (11 August 2026)
 
 Courseware and hands-on lab suite for the WSQ course
 [Securing the Future with Quantum Computing and Cryptography](https://www.tertiarycourses.com.sg/wsq-securing-the-future-with-quantum-computing-and-cryptography.html).
@@ -17,14 +17,42 @@ Learner Guide and labs can never drift apart.
 
 | Artifact | File |
 |---|---|
-| Trainer slide deck | `courseware/WSQ - Master Trainer Slides - Securing the Future with Quantum Computing and Cryptography - v11.0.pptx` (+ `.pdf`) |
+| Trainer slide deck | `courseware/WSQ - Master Trainer Slides - Securing the Future with Quantum Computing and Cryptography - v12.0.pptx` (+ `.pdf`) |
 | Lesson Plan | `courseware/LP-Securing the Future with Quantum Computing and Cryptography.docx` (+ `.pdf`) |
 | Learner Guide | `courseware/LG-Securing the Future with Quantum Computing and Cryptography.docx` (+ `.pdf`) |
 | Learner Guide (Markdown mirror) | `LG-Securing the Future with Quantum Computing and Cryptography.md` |
 | Diagram assets | `courseware/assets/*.png` |
 
-> The slide deck is deliberately **visual** and carries no step-by-step build
+> The slide deck is deliberately **visual** and carries no step-by-step *lab*
 > instructions. The full step-by-step for every activity lives in the **Learner Guide**.
+> Mathematical **derivations**, by contrast, ARE stepped out slide by slide in the deck.
+
+### Mathematical depth
+
+The deck (262 slides) and Learner Guide (89 pages) carry the full theory, not an overview:
+
+- **Prerequisites** — linear algebra and Dirac notation, inner/outer/tensor products,
+  eigenvalues; unitary operators and their four properties; density matrices and the
+  distinction between a superposition and a statistical mixture.
+- **The five postulates of quantum mechanics** — one section each, with the formal
+  statement, the mathematics, what it means in practice and why it matters.
+- **Eleven complete derivations**, one algebra step at a time: phase kickback, Deutsch,
+  Deutsch-Jozsa, quantum teleportation, the no-cloning theorem, BB84 security and the
+  25% QBER, quantum error correction, Grover, Shor, CHSH and the QFT.
+- **Quantum Phase Estimation** and the QFT built up from the classical DFT.
+- **Post-quantum hardening** — Mosca's inequality, cryptographic inventory (CBOM),
+  NIST FIPS 203/204/205, hybrid key exchange and crypto-agility.
+- **Quantum security** — the threat model, an honest QKD vs PQC comparison, and QRNG.
+- **Quantum computing and AI** — the four intersections, quantum ML assessed honestly,
+  AI for quantum (calibration, ML error decoders), and the realistic outlook.
+
+### Practice tool
+
+[**QuantumLab Beginner**](https://alfredang.github.io/quantumlabs/) — the interactive
+companion built by Tertiary Infotech Academy. 18 browser-based modules covering the
+postulates, Bloch sphere, entanglement, a CHSH experiment, a drag-and-drop circuit
+builder, a phase-kickback explorer, BB84 with an Eve toggle, and a 3-qubit QEC
+Monte-Carlo. No install required.
 
 Assessment papers and answer keys are **confidential** — they are distributed via Google
 Drive and the LMS only, and are excluded from this repository.
