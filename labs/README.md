@@ -14,7 +14,7 @@ Full step-by-step instructions for every activity are in the **Learner Guide**.
 
 ## The 18 activities
 
-| Lab | Activity | Topic | Files |
+| Lab | Activity title | Topic | Files |
 |---|---|---|---|
 | [`lab01`](lab01/) | Linear Algebra for Quantum Mechanics in Python | 1 | `main.py` |
 | [`lab02`](lab02/) | Visualising a Qubit on the Bloch Sphere | 2 | `main.py` |
