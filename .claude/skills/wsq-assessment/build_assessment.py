@@ -520,7 +520,7 @@ def build_pp(answers):
     para(doc, f"Course Code: {COURSE_CODE}", size=11, color=GREY, align=WD_ALIGN_PARAGRAPH.CENTER, after=12)
     if not answers:
         # Page 2 — candidate information, instructions and grading; the problem begins on the next page.
-        candidate_block(doc); instructions(doc, "90 minutes")
+        candidate_block(doc); instructions(doc, "1 hour")
         grading(doc, "Candidate has successfully completed all PP tasks and can explain the overall "
                      "functions and features used to achieve them.")
         page_break(doc)
