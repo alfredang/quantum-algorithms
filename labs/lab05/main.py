@@ -8,7 +8,7 @@ build the Bell and GHZ entangled states, and demonstrate phase kickback.
 Falls back to Qiskit if PennyLane is not installed, so the activity always runs.
 
 Run:  pip install pennylane
-      python labs/pennylane-gates/main.py
+      python labs/lab05/main.py
 """
 import numpy as np
 

@@ -6,8 +6,8 @@ Builds a single-qubit superposition circuit and a two-qubit Bell state, then run
 them. By default it runs on the local simulator so the activity always works; pass
 --hardware to submit the job to a real IBM Quantum backend.
 
-Run:  python labs/bell-state/main.py              # local simulator (noise-free)
-      python labs/bell-state/main.py --hardware   # real IBM Quantum device
+Run:  python labs/lab03/main.py              # local simulator (noise-free)
+      python labs/lab03/main.py --hardware   # real IBM Quantum device
 """
 import os
 import sys

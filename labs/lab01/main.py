@@ -7,7 +7,7 @@ inner and outer products, unitary and Hermitian operators, eigenvalues, the Born
 rule, and tensor products. Pure NumPy — no quantum SDK and no IBM account needed,
 so this runs anywhere.
 
-Run:  python labs/linear-algebra/main.py
+Run:  python labs/lab01/main.py
 """
 import numpy as np
 

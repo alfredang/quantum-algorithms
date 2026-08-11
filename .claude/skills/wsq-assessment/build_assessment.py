@@ -62,7 +62,7 @@ def _logo(name):
 ORG_LOGO    = _logo("tertiary-infotech-logo.png")
 COURSE_LOGO = None   # Tertiary-only cover (as LP/LG)
 
-Q_VER, A_VER = "v11", "v11"   # single standardised version across all four files
+Q_VER, A_VER = "v13", "v13"   # single standardised version across all four files
 BRAND = RGBColor(0x1F, 0x6F, 0xEB); DARK = RGBColor(0x11, 0x18, 0x27); GREY = RGBColor(0x55, 0x5B, 0x66)
 # Assessments carry the cover page only — no Document Version Control Record.
 
@@ -175,7 +175,7 @@ PRACTICAL = [
   "Part B — Name the resulting state and state the measurement probabilities you expect. "
   "Part C — Run the circuit with at least 1024 shots and paste the resulting histogram. Explain why a small "
   "number of |01> and |10> counts appear when the circuit is run on real hardware. "
-  "(Activity 3 — Superposition and Entanglement on IBM Quantum; Activity 4 — IBM Quantum Composer.)",
+  "(Activity 3 — labs/lab03; Activity 4 — labs/lab04.)",
   BOX_CAP,
   "Part A — Bell state circuit:\n"
   "from qiskit import QuantumCircuit\n"
@@ -202,7 +202,7 @@ PRACTICAL = [
   "messages 00, 01, 10 and 11. "
   "Part B — Build the decoding stage Bob applies and measure. "
   "Part C — Run all four encodings and paste the histograms, confirming each message decodes correctly. "
-  "(Activity 7 — Superdense Coding Protocol.)",
+  "(Activity 7 — labs/lab07.)",
   BOX_CAP,
   "Part A — Shared Bell pair, then Alice's encoding:\n"
   "qc = QuantumCircuit(2, 2)\n"
@@ -227,7 +227,7 @@ PRACTICAL = [
   "q2, perform Alice's Bell measurement on q0 and q1, and apply Bob's conditional corrections to q2. "
   "Part B — State which two classical bits are sent and which correction each triggers. "
   "Part C — Run the circuit and show that the state prepared on q0 is reconstructed on q2. "
-  "(Activity 6 — Quantum Teleportation.)",
+  "(Activity 6 — labs/lab06.)",
   BOX_CAP,
   "Part A — Teleportation circuit:\n"
   "import numpy as np\n"
@@ -251,7 +251,7 @@ PRACTICAL = [
   "Explain the MATHEMATICAL STEPS that prove the quantum teleportation protocol works — that is, show "
   "algebraically that Bob's qubit ends up in Alice's original unknown state after the corrections are applied. "
   "Work through the full state evolution using Dirac notation. "
-  "(Activity 6 — Quantum Teleportation; Topic 1 — Dirac notation and tensor products.)",
+  "(Activity 6 — labs/lab06; Topic 1 — Dirac notation and tensor products.)",
   MATH_CAP,
   "Award the mark where the candidate works through the following algebra (notation may vary):\n\n"
   "1. Initial state. Alice's unknown qubit: |psi> = a|0> + b|1>, with |a|^2 + |b|^2 = 1.\n"
@@ -279,7 +279,7 @@ PRACTICAL = [
   "Part B — Give the oracle construction for all four possible functions (constant-0, constant-1, "
   "balanced-identity and balanced-negation). "
   "Part C — Run the circuit against each oracle and state how you read constant versus balanced from the "
-  "measurement. (Activity 9 — Deutsch and Deutsch-Jozsa Algorithms.)",
+  "measurement. (Activity 9 — labs/lab09.)",
   BOX_CAP,
   "Part A — Deutsch circuit:\n"
   "qc = QuantumCircuit(2, 1)\n"
@@ -301,7 +301,7 @@ PRACTICAL = [
  ("Task 6", "A6",
   "Explain the MATHEMATICAL STEPS that prove the Deutsch algorithm — show algebraically why the measurement "
   "outcome distinguishes a constant function from a balanced one after a single query. "
-  "(Activity 9 — Deutsch Algorithm; Topic 3 — Phase Kickback.)",
+  "(Activity 9 — labs/lab09; Topic 3 — Phase Kickback.)",
   MATH_CAP,
   "Award the mark where the candidate works through the following algebra (notation may vary):\n\n"
   "1. Initial state: |0>|1>.\n\n"
@@ -328,7 +328,7 @@ PRACTICAL = [
   "them, compute the syndrome onto two ancilla qubits, and measure only the ancillas. "
   "Part B — Give the full syndrome table and the correction each syndrome triggers. "
   "Part C — Explain why the syndrome is measured instead of the data qubits, and why this does not violate the "
-  "no-cloning theorem. (Activity 17 — Bit-Flip and Phase-Flip Error Correction Codes.)",
+  "no-cloning theorem. (Activity 17 — labs/lab17.)",
   BOX_CAP,
   "Part A — Bit-flip code circuit (3 data qubits + 2 ancillas):\n"
   "qc = QuantumCircuit(5, 2)\n"

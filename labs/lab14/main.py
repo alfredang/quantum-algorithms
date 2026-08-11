@@ -9,8 +9,8 @@ prioritised migration plan.
 
 Pure Python — no quantum SDK required.
 
-Run:  python labs/pqc-migration/main.py
-      python labs/pqc-migration/main.py --scan www.tertiarycourses.com.sg
+Run:  python labs/lab14/main.py
+      python labs/lab14/main.py --scan www.tertiarycourses.com.sg
 """
 import argparse
 import subprocess

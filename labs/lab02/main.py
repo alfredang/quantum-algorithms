@@ -8,8 +8,8 @@ rotate it around the equator without changing the Z-basis probabilities.
 
 Runs on the local statevector simulator — no IBM Quantum account required.
 
-Run:  python labs/bloch-sphere/main.py
-      (figures are written to labs/bloch-sphere/out/)
+Run:  python labs/lab02/main.py
+      (figures are written to labs/lab02/out/)
 """
 import os
 import numpy as np

@@ -11,7 +11,7 @@ This script supports that activity from the command line:
 
 The .qasm files in this folder can be loaded straight into the Composer.
 
-Run:  python labs/quantum-composer/main.py
+Run:  python labs/lab04/main.py
 """
 import os
 import numpy as np
