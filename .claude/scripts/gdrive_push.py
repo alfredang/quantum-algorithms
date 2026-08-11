@@ -164,8 +164,16 @@ def push_labs(root, labs_dir, dry):
           f"(changed files only; replaced/removed files -> {real_name}/{arch_name}/)")
     args = ["sync", labs_dir, f"{REMOTE}:{folder_path}",
             "--backup-dir", f"{REMOTE}:{folder_path}/{arch_name}",
-            "--exclude", ".DS_Store",
             "--checksum", "-v", "--stats-log-level", "NOTICE"]
+    # Never publish junk, build artifacts or CREDENTIALS. A learner's labs/.env (or a
+    # stray per-lab .env) carries a live API token — uploading it to a shared Drive
+    # folder would leak it. Virtualenvs are also huge (500MB+) and machine-specific.
+    for pat in (".DS_Store", ".env", ".env.*", "*.pyc", "*.log",
+                ".venv/**", "**/.venv/**", "venv/**", "**/venv/**",
+                "__pycache__/**", "**/__pycache__/**",
+                ".ipynb_checkpoints/**", "**/.ipynb_checkpoints/**",
+                ".git/**", "**/.git/**", "qiskit-ibm.json", "**/out/**"):
+        args += ["--exclude", pat]
     for e in excludes:
         args += ["--exclude", f"/{e}/**"]
     if dry:
