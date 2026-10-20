@@ -1,9 +1,11 @@
 # Securing the Future with Quantum Computing and Cryptography
 
-**WSQ Course Code:** TGS-2024043419
-**Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)
-**Duration:** 4 days · 8 training hours per day (32 hours)
-**Current version:** v13.0 (11 August 2026)
+**WSQ Course Code:** TGS-2024043419\
+**Conducted by:** Tertiary Infotech Academy Pte Ltd (UEN 201200696W)\
+**Duration:** 4 days · 8 training hours per day (32 hours)\
+**Current version:** v13.0 (11 August 2026)\
+**Registration:** [View course details and register](https://www.tertiarycourses.com.sg/wsq-securing-the-future-with-quantum-computing-and-cryptography.html)\
+**Funding:** Up to 70% WSQ course-fee funding for eligible Singaporeans and PRs (50% baseline). Eligibility and terms apply.
 
 Courseware and hands-on lab suite for the WSQ course
 [Securing the Future with Quantum Computing and Cryptography](https://www.tertiarycourses.com.sg/wsq-securing-the-future-with-quantum-computing-and-cryptography.html).
@@ -29,7 +31,7 @@ Learner Guide and labs can never drift apart.
 
 ### Mathematical depth
 
-The deck (262 slides) and Learner Guide (90 pages) carry the full theory, not an overview:
+The deck (263 slides) and Learner Guide (90 pages) carry the full theory, not an overview:
 
 - **Prerequisites** — linear algebra and Dirac notation, inner/outer/tensor products,
   eigenvalues; unitary operators and their four properties; density matrices and the
